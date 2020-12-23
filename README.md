@@ -19,25 +19,30 @@ A [Grape](http://github.com/ruby-grape/grape) API mounted on Rack.
 * [entites](api/entities.rb): an example of using [grape-entity](https://github.com/ruby-grape/grape-entity)
 * [headers](api/headers.rb): demonstrates header case-sensitive handling
 
-See
----
 
-There's a deployed [grape-on-rack on Heroku](http://grape-on-rack.herokuapp.com/).
 
-Run
----
+This is an example Grape API with [Moesif API Analytics](https://www.moesif.com/) and monitoring added. 
 
+
+## How to run this example
+
+1. Add your Moesif Application Id to the `api/ping.rb`
+
+Your Moesif Application Id can be found in the [_Moesif Portal_](https://www.moesif.com/).
+After signing up for a Moesif account, your Moesif Application Id will be displayed during the onboarding steps. 
+
+You can always find your Moesif Application Id at any time by logging 
+into the [_Moesif Portal_](https://www.moesif.com/), click on the top right menu,
+and then clicking _Installation_.
+
+2. Run the application
+
+```bash
+bundle install
+rackup
 ```
-$ bundle install
-$ rackup
 
-Loading NewRelic in developer mode ...
-[2013-06-20 08:57:58] INFO  WEBrick 1.3.1
-[2013-06-20 08:57:58] INFO  ruby 1.9.3 (2013-02-06) [x86_64-darwin11.4.2]
-[2013-06-20 08:57:58] INFO  WEBrick::HTTPServer#start: pid=247 port=9292
-```
-
-### Hello World
+3. Call ping API
 
 Navigate to http://localhost:9292/api/ping with a browser or use `curl`.
 
@@ -46,6 +51,12 @@ $ curl http://localhost:9292/api/ping
 
 {"ping":"pong"}
 ```
+
+The API logs should show up in your Moesif account. 
+
+## Other APIs
+
+You can add the Moesif middleware to other APIs besides `ping.rb` and then try some of the APIs below. 
 
 ### Get Plain Text
 

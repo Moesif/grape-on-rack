@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby '2.6.5'
+ruby '2.5.1'
 
 gem 'grape'
 gem 'grape-entity'
@@ -11,6 +11,7 @@ gem 'mime-types'
 gem 'newrelic_rpm'
 gem 'nokogiri'
 gem 'rack-cors'
+gem 'moesif_rack'
 
 group :development do
   gem 'guard'
